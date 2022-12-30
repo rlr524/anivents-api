@@ -27,4 +27,20 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+// The using statement cleans up this scope variable as soon as the CreateScope method has run, allowing it to
+// not rely on GC because we know we don't need it after the method has run.
+using var scope = app.Services.CreateScope();
+var services = scope.ServiceProvider;
+
+try
+{
+    var context = services.GetRequiredService<DataContext>();
+    context.Database.Migrate();
+}
+catch (Exception ex)
+{
+    var logger = services.GetRequiredService<ILogger<Program>>();
+    logger.LogError(ex, "An error occurred during migration");
+}
+
 app.Run();
