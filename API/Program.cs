@@ -5,6 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+const string myAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -12,6 +14,13 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DataContext>(opt =>
 {
     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy(myAllowSpecificOrigins, policy =>
+    {
+        policy.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:3000");
+    });
 });
 
 var app = builder.Build();
@@ -23,8 +32,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// Middleware
+app.UseCors(myAllowSpecificOrigins);
 app.UseAuthorization();
-
 app.MapControllers();
 
 // The using statement cleans up this scope variable as soon as the CreateScope method has run, allowing it to
