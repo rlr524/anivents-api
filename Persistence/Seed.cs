@@ -19,7 +19,7 @@ namespace Persistence
                     Street = "22 Mayfair",
                     City = "London",
                     State = "",
-                    ZIP = "",
+                    Zip = "",
                     Venue = "Pub",
                 },
                 new Activity
@@ -31,7 +31,7 @@ namespace Persistence
                     Street = "",
                     City = "Paris",
                     State = "",
-                    ZIP = "",
+                    Zip = "",
                     Venue = "Louvre",
                 },
                 new Activity
@@ -43,7 +43,7 @@ namespace Persistence
                     Street = "",
                     City = "London",
                     State = "",
-                    ZIP = "",
+                    Zip = "",
                     Venue = "Natural History Museum",
                 },
                 new Activity
@@ -55,7 +55,7 @@ namespace Persistence
                     Street = "",
                     City = "London",
                     State = "",
-                    ZIP = "",
+                    Zip = "",
                     Venue = "O2 Arena",
                 },
                 new Activity
@@ -67,7 +67,7 @@ namespace Persistence
                     Street = "",
                     City = "London",
                     State = "",
-                    ZIP = "",
+                    Zip = "",
                     Venue = "Another pub",
                 },
                 new Activity
@@ -79,7 +79,7 @@ namespace Persistence
                     Street = "",
                     City = "London",
                     State = "",
-                    ZIP = "",
+                    Zip = "",
                     Venue = "Yet another pub",
                 },
                 new Activity
@@ -91,7 +91,7 @@ namespace Persistence
                     Street = "",
                     City = "London",
                     State = "",
-                    ZIP = "",
+                    Zip = "",
                     Venue = "Just another pub",
                 },
                 new Activity
@@ -103,7 +103,7 @@ namespace Persistence
                     Street = "",
                     City = "London",
                     State = "",
-                    ZIP = "",
+                    Zip = "",
                     Venue = "Roundhouse Camden",
                 },
                 new Activity
@@ -115,7 +115,7 @@ namespace Persistence
                     Street = "",
                     City = "London",
                     State = "",
-                    ZIP = "",
+                    Zip = "",
                     Venue = "Somewhere on the Thames",
                 },
                 new Activity
@@ -127,7 +127,7 @@ namespace Persistence
                     Street = "",
                     City = "London",
                     State = "",
-                    ZIP = "",
+                    Zip = "",
                     Venue = "Cinema",
                 }
             };
