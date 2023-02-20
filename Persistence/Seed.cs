@@ -6,13 +6,13 @@ namespace Persistence
     {
         public static async Task SeedData(DataContext context)
         {
-            if (context.Activities.Any()) return;
+            if (context.Events.Any()) return;
 
-            var activities = new List<Activity>
+            var activities = new List<Event>
             {
-                new Activity
+                new Event
                 {
-                    Title = "Past Activity 1",
+                    Title = "Past Event 1",
                     Date = DateTime.UtcNow.AddMonths(-2),
                     Description = "Activity 2 months ago",
                     Category = "drinks",
@@ -22,9 +22,9 @@ namespace Persistence
                     Zip = "",
                     Venue = "Pub",
                 },
-                new Activity
+                new Event
                 {
-                    Title = "Past Activity 2",
+                    Title = "Past Event 2",
                     Date = DateTime.UtcNow.AddMonths(-1),
                     Description = "Activity 1 month ago",
                     Category = "culture",
@@ -34,9 +34,9 @@ namespace Persistence
                     Zip = "",
                     Venue = "Louvre",
                 },
-                new Activity
+                new Event
                 {
-                    Title = "Future Activity 1",
+                    Title = "Future Event 1",
                     Date = DateTime.UtcNow.AddMonths(1),
                     Description = "Activity 1 month in future",
                     Category = "culture",
@@ -46,9 +46,9 @@ namespace Persistence
                     Zip = "",
                     Venue = "Natural History Museum",
                 },
-                new Activity
+                new Event
                 {
-                    Title = "Future Activity 2",
+                    Title = "Future Event 2",
                     Date = DateTime.UtcNow.AddMonths(2),
                     Description = "Activity 2 months in future",
                     Category = "music",
@@ -58,9 +58,9 @@ namespace Persistence
                     Zip = "",
                     Venue = "O2 Arena",
                 },
-                new Activity
+                new Event
                 {
-                    Title = "Future Activity 3",
+                    Title = "Future Event 3",
                     Date = DateTime.UtcNow.AddMonths(3),
                     Description = "Activity 3 months in future",
                     Category = "drinks",
@@ -70,9 +70,9 @@ namespace Persistence
                     Zip = "",
                     Venue = "Another pub",
                 },
-                new Activity
+                new Event
                 {
-                    Title = "Future Activity 4",
+                    Title = "Future Event 4",
                     Date = DateTime.UtcNow.AddMonths(4),
                     Description = "Activity 4 months in future",
                     Category = "drinks",
@@ -82,9 +82,9 @@ namespace Persistence
                     Zip = "",
                     Venue = "Yet another pub",
                 },
-                new Activity
+                new Event
                 {
-                    Title = "Future Activity 5",
+                    Title = "Future Event 5",
                     Date = DateTime.UtcNow.AddMonths(5),
                     Description = "Activity 5 months in future",
                     Category = "drinks",
@@ -94,9 +94,9 @@ namespace Persistence
                     Zip = "",
                     Venue = "Just another pub",
                 },
-                new Activity
+                new Event
                 {
-                    Title = "Future Activity 6",
+                    Title = "Future Event 6",
                     Date = DateTime.UtcNow.AddMonths(6),
                     Description = "Activity 6 months in future",
                     Category = "music",
@@ -106,9 +106,9 @@ namespace Persistence
                     Zip = "",
                     Venue = "Roundhouse Camden",
                 },
-                new Activity
+                new Event
                 {
-                    Title = "Future Activity 7",
+                    Title = "Future Event 7",
                     Date = DateTime.UtcNow.AddMonths(7),
                     Description = "Activity 2 months ago",
                     Category = "travel",
@@ -118,9 +118,9 @@ namespace Persistence
                     Zip = "",
                     Venue = "Somewhere on the Thames",
                 },
-                new Activity
+                new Event
                 {
-                    Title = "Future Activity 8",
+                    Title = "Future Event 8",
                     Date = DateTime.UtcNow.AddMonths(8),
                     Description = "Activity 8 months in future",
                     Category = "film",
@@ -132,7 +132,7 @@ namespace Persistence
                 }
             };
 
-            await context.Activities.AddRangeAsync(activities); // Saves the changes into memory
+            await context.Events.AddRangeAsync(activities); // Saves the changes into memory
             await context.SaveChangesAsync(); // Commits the changes to the db
         }
     }
