@@ -21,7 +21,14 @@ namespace API.Controllers
         [HttpGet("{id}")] // /api/events/[id]
         public async Task<ActionResult<Event>> GetEvent(Guid id)
         {
-            return Ok();
+            return await Mediator.Send(new Details.Query{Id = id});
         }
+        
+        [HttpPost] // /api/events
+        public async Task<IActionResult> CreateEvent(Event e)
+        {
+            return Ok(await Mediator.Send(new Create.Command { Event = e }));
+        }
+
     }
 }
